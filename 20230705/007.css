@@ -1,0 +1,27 @@
+/* 아이디 선택자 */
+#title {
+  text-align: center;
+}
+
+/* 그룹 선택자, 인접 형제 선택자 */
+p,
+.my+strong {
+  border: 2px solid #e0e0e0;
+  margin: 0 10px;
+}
+
+/* 클래스 선택자 */
+.my {
+  color: slateblue;
+}
+
+/* 자식 선택자 */
+.sect1 > strong {
+  background-color: aqua;
+}
+
+/* 자손 선택자 */
+/* .sect2 strong {
+
+} */
+
