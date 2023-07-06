@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+
+/* 웹 폰트 */
+@font-face {
+  font-family: 'DOSPilgi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 웹 폰트 */
+@font-face {
+  font-family: 'MYYeongnamnu';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/MYYeongnamnu.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 내부 파일이용 */
+@font-face {
+  font-family: 'Pretendard-bold';
+  src: url('./font/Pretendard-Bold.woff');
+}
+
+body {
+  color: red;
+}
+h1,
+h2 {
+  font-weight: normal;
+}
+h1 {
+  color: inherit;
+  font-family: 'Black Han Sans', sans-serif;
+}
+strong {
+  border-bottom: 5px solid currentColor;
+}
+
+h2 {
+  color: #999;
+  font-family: 'Bagel Fat One', cursive;
+}
+.dos {
+  font-family: 'DOSPilgi';
+}
+.milyang {
+  font-family: 'MYYeongnamnu';
+}
+.moirai {
+  font-family: 'Moirai One', cursive;
+}
+.pretendard {
+  font-family: 'Pretendard-bold';
+}

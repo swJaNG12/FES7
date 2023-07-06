@@ -1,0 +1,18 @@
+/* 웹 폰트 */
+@font-face {
+  font-family: 'MYYeongnamnu';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/MYYeongnamnu.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 내부 파일이용 */
+@font-face {
+  font-family: 'Pretendard-bold';
+  src: url('./font/Pretendard-Bold.woff');
+}
+.webfont {
+  font-family: 'MYYeongnamnu';
+}
+.file {
+  font-family: 'Pretendard-bold';
+}

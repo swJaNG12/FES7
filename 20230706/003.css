@@ -1,0 +1,23 @@
+h2 {
+  font-size: 32px;
+}
+h3 {
+  font-size: 2em;
+}
+
+.par {
+  width: 200px;
+  height: 200px;
+  background-color: aqua;
+  font-size: 20px;
+}
+.child {
+  /* width: 50%; */
+  width: 50vw;
+  height: 50vh;
+  font-size: 2em;
+  background-color: salmon;
+}
+P {
+  font-size: 4rem;
+}
