@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>border</title>
+  <style>
+    body {
+      position: relative;
+      height: 500px;
+      text-align: center;
+    }
+    .box1 {
+      width: 100px;
+      height: 100px;
+      background-color: royalblue;
+      border: 10px dashed gold;
+      border-style: dashed double solid dotted;
+      border-radius: 50px 0 50px 20px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+    div {
+      background-color: royalblue;
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+      display: inline-block;
+    }
+    .b1 {
+      border-radius: 50%;
+    }
+    .b2 {
+      border-radius: 10px;
+    }
+    .b3 {
+      border-radius: 100% 0 0 0;
+    }
+    .b4 {
+      border-radius: 100% 0;
+    }
+    .b5 {
+      border-radius: 0 50%;
+    }
+    .b6 {
+      height: 50px;
+      border-radius: 100px 100px 0 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1">
+    box1
+  </div>
+
+
+  <div class="b1"></div>
+  <div class="b2"></div>
+  <div class="b3"></div>
+  <div class="b4"></div>
+  <div class="b5"></div>
+  <div class="b6"></div>
+  
+</body>
+
+</html>
