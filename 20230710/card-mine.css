@@ -1,0 +1,72 @@
+/* 2023-7-10 html style을 css파일로 분리 */
+@font-face {
+  font-family: 'Pretendard-normal';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* css style reset */
+body, h1, h2, p {
+  margin: 0;
+}
+body {
+  font-family: 'Pretendard-normal';
+  color: #29363D;
+}
+h1, h2 {
+  font-size: inherit;
+}
+a {
+  color: inherit;
+}
+article {
+  display: inline-block;
+}
+/* card */
+.card {
+  width: 288px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.10);
+}
+.card img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  aspect-ratio: 288/196;
+  object-fit: cover;
+}
+.card h2 {
+  font-family: 'Pretendard-Bold';
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.card .text-group {
+  padding: 20px 12px 16px;
+}
+.card .content {
+  font-size: 14px;
+  margin: 16px 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #5A6A72;
+  line-height: 1.6;
+  height: calc(1em * 1.6 * 2);
+}
+.card .read {
+  text-decoration: underline;
+  font-family: 'Pretendard-Bold';
+  cursor: pointer;
+  width: 70px;
+  height: 24px;
+  padding: 3px 30px 3px 6px;
+  box-sizing: border-box;
+}

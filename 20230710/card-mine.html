@@ -5,72 +5,40 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
-  <style>
-    @font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-    }
-    span {
-      display: flex;
-    }
-    .card {
-      width: 288px;
-      height: 348px;
-      border-radius: 8px;
-      background: #FFF;
-      box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.10);
-      box-sizing: border-box;
-    }
-    .card img {
-      width: 288px;  /* width: 100% 로 하는게 좋다.*/
-      height: 196px;
-      flex-shrink: 0;
-      border-radius: 8px 8px 0 0;
-    }
-    .text {
-      padding: 8px 20px;
-
-    }
-    .title {
-      font-weight: bold;
-      /* background-color: aqua; */
-      padding-bottom: 10px;
-      color: #29363D;
-      font-family: 'Pretendard-Regular';
-    }
-    .subtext {
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-      color: #5A6A72;
-      font-family: 'Pretendard-Regular';
-      font-size: 12px;
-    }
-    button {
-      border: 0;
-      outline: 0;
-      text-decoration: underline;
-      /* background-color: aqua; */
-      padding-left: 0;
-      padding-top: 16px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="./card-mine.css">
 </head>
 <body>
-  <div class="card">
-    <img src="./images/thumbnail.png" alt="썸네일">
-
-    <div class="text">
-      <span class="title">그것을 피가 청춘을 것이다.</span>
-      <span class="subtext">청춘의 하였으며, 이것은 몸이 때문이다. 사는가 고동을 용기가 충분히 청춘 것이다. 얼마나 반짝이는 소담스...운 열락의 아름다우냐? 가지에 같지 청춘의 옷을 목숨을 피어나기 오직 군영과 칼이다. 거친 끓는 예가 뿐이다. 방지하는 꽃이 청춘을 생명을 이것이다. 인간의 거선의 피고, 모래뿐일 작고 우리 평화스러운 있는가?</span>
-      <button>Read</button>
-    </div>
-    
-  </div>
+  <!-- 2023-7-10 수정 -->
+  <h1>card</h1>
+  <article class="card">
+    <a>
+      <img src="./images/weniv-chilli.png" alt="위니브 동물 다람쥐">
+      <div class="text-group">
+        <h2>그것을 피가 청춘을 것이다</h2>
+        <p class="content">청춘의 하였으며, 이것은 몸이 때문이다. 사는가 고동을 용기가 충분히 청춘 것이다. 얼마나 반짝이는 소담스...운 열락의 아름다우냐? 가지에 같지 청춘의 옷을 목숨을 피어나기 오직 군영과 칼이다. 거친 끓는 예가 뿐이다. 방지하는 꽃이 청춘을 생명을 이것이다. 인간의 거선의 피고, 모래뿐일 작고 우리 평화스러운 있는가?</p>
+        <p class="read">Read</p>
+      </div>
+    </a>
+  </article>
+  <article class="card">
+    <a>
+      <img src="./images/weniv-binky.png" alt="위니브 동물 다람쥐">
+      <div class="text-group">
+        <h2>그것을 피가 청춘을 것이다</h2>
+        <p class="content">청춘의 하였으며, 이것은 몸이 때문이다. 사는가 고동을 용기가 충분히 청춘 것이다. 얼마나 반짝이는 소담스...운 열락의 아름다우냐? 가지에 같지 청춘의 옷을 목숨을 피어나기 오직 군영과 칼이다. 거친 끓는 예가 뿐이다. 방지하는 꽃이 청춘을 생명을 이것이다. 인간의 거선의 피고, 모래뿐일 작고 우리 평화스러운 있는가?</p>
+        <p class="read">Read</p>
+      </div>
+    </a>
+  </article>
+  <article class="card">
+    <a>
+      <img src="./images/weniv-licat.png" alt="위니브 동물 다람쥐">
+      <div class="text-group">
+        <h2>그것을 피가 청춘을 것이다. 였으며, 이것은 몸이 때문이다. 사는가 고동을 용기가 충분히 청춘 것이다. 얼마나 반짝이는 소담스...운 열락의 아름다우냐? 가지에 같지 청춘의 옷을 목숨을 피어나기 오직 군영과 칼이다. 거친 끓는 예가 뿐이다. 방지하는 꽃이 청춘을 생명을 이것이다. 인간의 거선의 피고, 모래뿐일 작고 우리 평화스러운 </h2>
+        <p class="content">청춘의 하있는가?</p>
+        <p class="read">Read</p>
+      </div>
+    </a>
+  </article>
 </body>
 </html>
