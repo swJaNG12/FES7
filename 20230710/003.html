@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position</title>
+  <style>
+    body {
+      height: 200vh;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: rgba(65,105,225,.8);
+      color: white;
+    }
+    .relative {
+      position: relative;
+      /* top: 200px; */
+      /* left: 200px; */
+      right: 50px;
+    }
+    .absolute {
+      position: absolute;
+      top: 0px;
+      /* right: 50px; */
+      /* left: 0; */
+    }
+    .parent {
+      position: relative;
+      border: 2px solid red;
+    }
+    .fixed {
+      position: fixed;
+      right: 0px;
+      bottom: 0px;
+    }
+    .sticky {
+      position: sticky;
+      top: 0px;
+      left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="box fixed">
+      box
+    </div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut assumenda, numquam cupiditate sequi minima in doloribus eveniet ab hic aliquid similique blanditiis distinctio deserunt nulla quis deleniti voluptatem rerum harum.
+    assumenda, numquam cupiditate sequi minima in doloribus eveniet ab hic aliquid similique blanditiis distinctio deserunt nulla quis deleniti voluptatem rerum harum.
+    assumenda, numquam cupiditate sequi minima in doloribus eveniet ab hic aliquid similique blanditiis distinctio deserunt nulla quis deleniti voluptatem rerum harum.
+  </div>
+  <div class=" box sticky">box</div>
+
+  
+
+</body>
+</html>
