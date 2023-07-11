@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>float</title>
+  <style>
+    header {
+      background-color: skyblue;
+      height: 100px;
+    }
+    section {
+      background-color: salmon;
+      height: 300px;
+    }
+    aside {
+      background-color: lime;
+      height: 300px;
+    }
+
+    footer {
+      background-color: slateblue;
+      height: 100px;
+    }
+    
+    /* 방법1 section 너비 없을 때 */
+    .a1 section {
+      float: left;
+      width: 80%;
+    }
+
+    /* 방법2 너비 값 있을 때*/
+    .a2 section {
+      width: 70%;
+      float: right;
+    }
+    .a2 div {
+      width: 10%;
+      background-color: royalblue;
+      height: 300px;
+      float: right;
+    }
+    .a2 aside {
+      width: 20%;
+      float: left;
+    }
+    .a2 footer {
+      clear: left;
+    }
+
+    /* 방법3 clear-fix */
+    .a3 section {
+      width: 80%;
+      float: left;
+    }
+    .a3 aside {
+      width: 20%;
+      float: right;
+    }
+
+    .clear-fix::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    /* 가운데 정렬 */
+    header, section, aside, footer, .a2 div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+    }
+    header, section, aside, footer, .a2 div {
+      border: 10px solid #ddd;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="a1">
+    <header>header</header>
+      <section>section</section>
+      <aside>aside</aside>
+    <footer>footer</footer>
+  </div>
+  <br>
+  <div class="a2">
+    <header></header>
+      <section></section>
+      <div>div</div>
+      <aside></aside>
+    <footer></footer>
+  </div>
+  <br>
+  <div class="a3">
+    <header></header>
+      <div class="clear-fix">
+        <section></section>
+        <aside></aside>
+      </div>
+    <footer></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+body, h1 {
+  margin: 0;
+  font-size: inherit;
+}
+button {
+  border: 0;
+  outline: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  width: 350px;
+  height: 140px;
+  padding: 30px 25px;
+  margin: 10px auto 0;
+}
+.container article {
+  background-color: aqua;
+  /* margin: 19px 0 18px 16px; */
+}
+.container .title {
+  font-size: 12px;
+}
+.container article .title {
+  margin: 19px 0 16px 0;
+}
+.container .login-btn {
+  background-color: #711BFF;
+  width: 318px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  margin: 16px 0 17px 0;
+}
+.container .login-btn img {
+  width: 64px;
+  height: 18px;
+  margin-right: 4px;
+}
+.container .login-btn span {
+  color: #fff;
+}
+
+.container footer {
+  display: flex;
+  height: 15px;
+  /* background-color: aqua; */
+  justify-content: space-between;
+  font-size: 12px;
+  width: 318px;
+}
+.container footer .user,
+.container footer .sign {
+  display: flex;
+  /* border: 1px solid red; */
+  align-items: center;
+}
+.container footer img {
+  width: 16px;
+  height: 16px;
+  padding-right: 4px;
+}
+.container footer .user .name {
+  border-right: 1px solid #767676;
+  padding-right: 4px;
+}
+.container footer .user .pw {
+  padding-left: 4px;
+}
