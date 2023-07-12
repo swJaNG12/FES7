@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'Pretendard-normal';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+body, h1, p {
+  margin: 0;
+}
+body {
+  font-size: 12px;
+  color: #5A6A72;
+  font-family: 'Pretendard-normal';
+}
+a {
+  color: inherit;
+}
+.wrap {
+  width: 288px;
+  height: 374px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.10);
+  margin: 20px auto 0;
+}
+.wrap header {
+  display: flex;
+  margin: 16px 16px 0 16px;
+}
+.wrap header img {
+  border-radius: 50%;
+
+  /* gap 써보기 */
+  margin-right: 16px;
+}
+.wrap header div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.wrap header div .title {
+  font-size: 16px;
+  font-family: 'Pretendard-Bold';
+}
+.wrap main img {
+  width: 288px;
+  height: 196px;
+  margin: 15px 0 10px 0;
+}
+.wrap main .text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin: 0 16px 16px 16px;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+}
+
+/* 위치를 잡을 때 flex 말고 position을 사용해도 된다.*/
+footer .read {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+footer .read a {
+  margin: 0 20px 0 22px;
+  font-size: 14px;
+  font-family: 'Pretendard-Bold';
+  color: #29363D;
+}
+footer .icons {
+  margin-right: 16px;
+}
+footer .icons img {
+  margin-right: 8px;
+}
+footer .icons img:last-child {
+  margin-right: 0;
+}
