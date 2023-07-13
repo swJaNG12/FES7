@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: royalblue;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .box:nth-child(even) {
+      background-color: seagreen;
+    }
+    .scale1 {
+      /* transform-origin: 0 0; */
+      transition: all 1s;
+    }
+    .scale1:hover {
+      /* scale x축 y축 별도 지정 */
+      /* transform: scale(1.2, 2); */
+      /* transform: scaleX(2) scaleY(2); */
+      /* transform: rotate(2turn); */
+      /* transform: translate(200px, 150px); */
+      /* transform: skew(30deg, 20deg); */
+      transform: translate(100px, 100px) rotate(1turn);
+    }
+    .scale2 {
+      transition: all 1s;
+    }
+    .scale2:hover {
+      transform: translate(100px, -100px) rotate(1turn);
+    }
+  </style>
+</head>
+<body>
+  <div class="box scale1">box</div>
+  <div class="box scale2">box</div>
+</body>
+</html>

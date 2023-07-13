@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+      .box {
+      width: 100px;
+      height: 100px;
+      background-color: royalblue;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .box:nth-child(even) {
+      background-color: seagreen;
+    }
+    .translate {
+      transform: translate(50px, 50px);
+    }
+    .position {
+      position: relative;
+      top: 50px;
+      left: 50px;
+    }
+    .bar {
+      background-color: #ddd;
+      width: 400px;
+    }
+    .bar2 {
+      background-color: royalblue;
+      height: 30px;
+      width: 1%;
+      transform-origin: 0 0;
+      transition: all 1s;
+    }
+    .bar:hover .bar2 {
+      /* Width값을 바꾸는 것보다 transform을 사용하는 것이 성능에 더 좋다. */
+      transform: scaleX(100);
+      /* width: 100%; */
+    }
+  </style>
+</head> 
+<body>
+  <div class="box translate">translate</div>
+  <div class="box position">position</div>
+
+  <br>
+  <br>
+  <br>
+  <div class="bar">
+    <div class="bar2"></div>
+  </div>
+</body>
+</html>

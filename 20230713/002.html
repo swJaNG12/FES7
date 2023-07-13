@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 함수</title>
+  <style>
+    div {
+      background-color: skyblue;
+      width: calc(40px + 10rem);
+    }
+    ul, li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      float: left;
+      background-color: gold;
+
+      /* 4단이면 2룰 3으로 3을 3로 */
+      width: calc((100% - (20px * 2)) / 3);
+    }
+
+
+    /* li:not(:first-child) {
+    } */
+    /* 위와 같은 선택자  li뒤에 ~ 나오는 li */
+    li~li {
+      margin-left: 20px;
+
+    }
+
+
+
+    li:nth-child(even) {
+      background-color: seagreen;
+    }
+  </style>
+</head>
+<body>
+
+  <div>hello</div>
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+:root {
+  --main-color1: #2D3848;
+  --main-color2: #439AFF;
+  --main-color3: #FD6F6F
+}
+
+button {
+  display: block;
+  margin-bottom: 20px;
+  width: 88px;
+  height: 32px;
+  border-radius: 0;
+  font-size: 12px;
+  background-color: var(--main-color1);
+  color: #fff;
+  border-width: 1px;
+  outline: 1px solid #4A5568;
+  border-style: none;
+}
+.btn1:hover {
+  border: 1px solid #4A5568;
+  border-width: 1px 0 0 1px;
+  text-decoration: underline;
+}
+.btn1:active {
+  border: 1px solid #000;
+  border-width: 1px 0 0 1px;
+}
+.btn1:disabled {
+  color: #4A5568;
+  text-decoration: none;
+}
+
+.btn2 {
+  color: var(--main-color2);
+}
+.btn2:hover {
+  background-color: var(--main-color2);
+  color: #fff;
+  text-decoration: underline;
+}
+
+.btn3 {
+  color: var(--main-color3);
+}
+.btn3:hover {
+  background-color: var(--main-color3);
+  color: #fff;
+  text-decoration: underline;
+}
