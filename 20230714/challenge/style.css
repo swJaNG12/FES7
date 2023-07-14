@@ -1,0 +1,32 @@
+body, h1 {
+  margin: 0;
+}
+body {
+  color: white;
+  background-image: url('images/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center; */
+}
+
+.wraper {
+  padding: 57px 0;
+}
+.wraper img {
+  display: block;
+  margin: 0 auto;
+}
+.wraper .content {
+  width: 300px;
+  margin: 0 auto;
+  padding: 60px 20px 0 20px;
+  box-sizing: border-box; 
+  background-image: url('images/green.png');
+  background-repeat: no-repeat;
+  background-color: #9C6035;
+  border-radius: 0px 0px 30px 30px;
+  border-bottom: 10px solid #46260E;
+}
+.wraper .content p {
+  padding-bottom: 30px ;
+}
