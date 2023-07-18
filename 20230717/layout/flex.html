@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex</title>
+  <style>
+    .container {
+      width: 520px;
+      height: 520px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .item-a {
+      background-color: royalblue;
+    }
+
+    .item-b {
+      background-color: gold;
+    }
+
+    .item-c {
+      background-color: slateblue;
+    }
+
+    .item-d {
+      background-color: orange;
+    }
+
+    .item-e {
+      background-color: salmon;
+    }
+
+    .item-f {
+      background-color: seagreen;
+    }
+    .container div {
+      /* 비율을 유지하고 싶다면 이 속성,값을 주자. */
+      flex-basis: 0;
+    }
+    [class^='item'] {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 첫 번째 flex */
+    .con1 {
+      flex-grow: 310;
+    }
+
+    .con2 {
+      flex-grow: 200;
+
+      /* 2번째 플렉스 */
+      display: flex;
+      gap: 10px;
+      /* gap: 10px; */
+    }
+    .con2 .item-e {
+      flex-grow: 200;
+    }
+    .con2 .item-f {
+      flex-grow: 310;
+    }
+
+    /* con1 분할 */
+    .con1 {
+      display: flex;
+      gap: 10px;
+    }
+    .con1 .con1-1 {
+      flex-grow: 310;
+    }
+    .con1 .item-d {
+      flex-grow: 200;
+    }
+
+    /* con1-1 */
+    .con1-1 {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+    }
+    .con1-1 .item-a {
+      flex-grow: 2;
+    }
+    .con1-1 .con1-1-1 {
+      flex-grow: 1;
+    }
+
+    /*  */
+    .con1-1-1 {
+      display: flex;
+      gap: 10px;
+    }
+    .con1-1-1 .item-b {
+      flex-grow: 2;
+    }
+    .con1-1-1 .item-c {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="con1">
+      <div class="con1-1">
+        <div class="item-a">A</div>
+        <div class="con1-1-1">
+          <div class="item-b">B</div>
+          <div class="item-c">C</div>
+        </div>
+      </div>
+      <div class="item-d">D</div>
+    </div>
+    <div class="con2">
+      <div class="item-e">E</div>
+      <div class="item-f">F</div>
+    </div>
+  </div>
+
+</body>
+
+</html>

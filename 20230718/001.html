@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: gold;
+
+      /* keyframe이름 지속시간 */
+      animation: change 2s 1s infinite;
+    }
+    @keyframes change {
+      0% {
+        scale: 0;
+        background-color: royalblue;
+      }
+      20% {
+        scale: 0.2;
+        background-color: blue;
+      }
+      100% {
+        scale: 1.2;
+        background-color: seagreen;
+      }
+    }
+
+    .licat {
+      width: 168px;
+      height: 200px;
+      border: 4px solid #000;
+
+      /* background: url(./image/keyframes-licat.png) no-repeat 0 0 / auto 100%; */
+      background-image: url(./image/keyframes-licat.png);
+      background-repeat: no-repeat;
+      /* 좌표 */
+      background-position: 0 0;
+      /* 너비, 높이 */
+      background-size: auto 100%;
+
+      animation: move-licat 2s infinite steps(6);
+
+      /* 위의 축약을 풀어서 쓴 것 */
+      animation-name: move-licat;
+      /* .8동안 이 애니메이션을 완수하라, 애니메이션이 한 사이클을 완료하는데 걸리는 시간을 지정합니다. */
+      animation-duration: 1s;
+      /* 애니메이션 재생 횟수를 설정합니다. */
+      animation-iteration-count: infinite;
+      /* steps(n) : n개의 단계 */
+      animation-timing-function: steps(6);
+    /* n초 동안 지연됬다가 에니메이션 진행, n초 후에 에니메이션 실행 */
+      animation-delay: .2s;
+      /* 애니메이션 진행 방향 */
+      animation-direction: reverse;
+    }
+    @keyframes move-licat {
+      /* 0% {
+        background-position: 0 0;
+      }
+      80% {
+        background-position: 0 0;
+      } */
+      to {
+        background-position: right 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="box">box</div> -->
+  <div class="licat"></div>
+</body>
+</html>

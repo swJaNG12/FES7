@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .container {
+      width: 500px;
+      height: 500px;
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+      grid-template-rows: 100px 100px 100px;
+      background-color: #ddd;
+      
+      /* container 안의 셀의 정렬 */
+      align-content: space-evenly;
+      justify-content: space-evenly;
+
+      /* 셀 안의 콘텐츠의 정렬 */
+      align-items: center;
+      justify-items: center;
+    }
+
+    .item {
+      width: 50px;
+      height: 50px;
+      background-color: skyblue;
+    }
+
+    .item:nth-child(odd) {
+      background-color: seagreen;
+    }
+    .item:nth-child(3) {
+      background-color: salmon;
+      /* order: -1; */
+
+      /* 개별 정렬 */
+      /* align-self: end; */
+      /* justify-self: end; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item">A</div>
+    <div class="item">B</div>
+    <div class="item">C</div>
+    <div class="item">D</div>
+    <div class="item">E</div>
+    <div class="item">F</div>
+    <div class="item">D</div>
+    <div class="item">E</div>
+    <div class="item">F</div>
+  </div>
+
+
+</body>
+
+</html>
