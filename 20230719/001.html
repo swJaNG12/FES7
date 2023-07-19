@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form</title>
+  <style>
+    input[type="text"] {
+      width: 200px;
+    }
+    input[type="text"]:enabled {
+      background-color: skyblue;
+    }
+    input[type="text"]:disabled {
+      background-color: salmon;
+    }
+    input[type="text"]:read-only {
+      border: 2px solid red;
+    }
+    input[type="text"]:read-write {
+      border-top: 4px solid purples;
+    }
+    input[type="checkbox"]:checked+label {
+      text-decoration: line-through;
+      color: #767676;
+    }
+    input[type="email"]::placeholder {
+      color: #767676;
+      font-size: 12px;
+    }
+    input[type="email"]:required {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" value="normal enabled/read-write">
+  <input type="text" disabled value="disabled disabled/read-only">
+  <input type="text" readonly value="readonly readonly/enabled">
+
+  <br>
+  <input type="checkbox" id="chk1">
+  <label for="chk1">
+    동의하십니까?
+  </label>
+
+
+  <input type="email" placeholder="abc@abc.com">
+  <input type="email" required>
+</body>
+</html>

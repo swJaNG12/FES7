@@ -1,0 +1,96 @@
+h1 {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  vertical-align: top;
+}
+body {
+  margin: 0;
+  background-color: #fffaf0;
+}
+/* header */
+.max-width {
+  width: 1284px;
+  max-width: calc(100% - 60px);
+  margin: auto;
+}
+.header .max-width {
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  background-color: #fff;
+}
+
+.header h1 {
+  width: 156px;
+}
+.join-btn {
+  display: inline-flex;
+  height: 40px;
+  align-items: center;
+  padding: 0 20px 0 46px;
+
+  background-image: url(./img/icon-join.svg);
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: 10px 50%;
+}
+
+
+.login {
+  margin-top: 70px;
+}
+.login .main-title  {
+  width: 250px;
+  margin: 0 auto;
+  text-align: center;
+}
+.login .main-title > img {
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.login .main-title strong {
+  border-bottom: 4px solid #ff4f6e;
+  box-shadow: inset 0 -0.5em #ffd8d6;
+}
+
+.login .form {
+  width: 392px;
+  margin: 40px auto 52px;
+}
+
+.login .form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.login .form input {
+  margin-bottom: 24px;
+  width: 100%;
+  height: 48px;
+  padding: 10px;
+  border: 0;
+  border-bottom: 2px solid #677880;
+  background-color: #fff;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+.login .form button {
+  width: 100%;
+  height: 48px;
+  background-color: #29363D;
+  color: #f4f5f5;
+}
+.footer {
+  text-align: center;
+}
