@@ -1,0 +1,280 @@
+/* reset */
+body, h1, h2, p, ul, button {
+  padding: 0;
+  margin: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+  font: inherit;
+}
+button:enabled {
+  cursor: pointer;
+}
+input {
+  font: inherit
+}
+ul, li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+button {
+  border: 0;
+  background: none;
+  font: inherit;
+}
+/* common */
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+/* css */
+body {
+  background-color: #EAE8FE;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 제목 */
+h1 {
+  text-align: center;
+}
+h1 img {
+  max-width: 100%;
+}
+
+/* 메인 */
+main {
+  display: grid;
+  max-width: 100%;
+  width: 748px;
+}
+/* min : 부터 */
+/* max : 까지 */
+@media (min-width: 749px) {
+  main {
+    grid-template-areas: 
+    "section1 section2"
+    "section1 section3";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px auto;
+    margin: 67px auto;
+    gap: 20px 28px;
+  }
+}
+@media (max-width: 748px) {
+  main {
+    grid-template-areas: 
+    "section1"
+    "section2"
+    "section3";
+    grid-template-columns: 100%;
+    margin: 18px auto;
+  }
+  body {
+    background-color: #fff;
+  }
+}
+.section1 {
+  background-color: white;
+  padding: 30px 27px;
+  grid-area: section1;
+}
+.section2 {
+  background-color: white;
+  grid-area: section2;
+  padding: 9px 27px;
+}
+.section3 {
+  background-color: white;
+  grid-area: section3;
+  padding: 25px 27px;
+  display: flex;
+  flex-direction: column;
+
+}
+.section3 .get-list {
+  flex-grow: 1;
+  flex-basis: 364px;
+}
+.section3 h2 {
+  text-align: center;
+  margin-bottom: 13px;
+}
+.total-price {
+  font-size: 12px;
+  text-align: right;
+  margin-top: 8px;
+}
+
+/* 판매음료 */
+[class^="btn"] {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.50);
+  min-height: 32px;
+  font-size: 13px;
+}
+.cola-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.btn-cola {
+  /* grid cell에 맞게 100% */
+  border-radius: 10px;
+  padding: 11px 12px 9px;
+}
+.btn-cola img,
+.cola-name,
+.cola-price {
+  display: block;
+}
+.btn-cola img {
+  width: 36px;
+  margin: auto;
+}
+.cola-name {
+  font-size: 9px;
+  margin: 6px;
+}
+.cola-price {
+  font-size: 12px;
+  background-color: #6327FE;
+  color: #fff;
+  padding: 5px 0;
+  font-weight: normal;
+  border-radius: 30px;
+}
+
+/* 선택한 버튼 */
+.btn-cola.on {
+  /* border가 아닌 box-shadow를 준 이유는 */
+  /* 레이아웃이 무너질 수 있기 때문이다. */
+  box-shadow: 0px 0px 0px 4px #6327FE;
+}
+/* 품절된 버튼 */
+.btn-cola:disabled {
+  color: inherit;
+  position: relative;
+  /* overflow: hidden; */
+}
+.btn-cola:disabled::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.80);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+}
+.soldout {
+  color: #EAE8FE;
+  font-size: 14px;
+  z-index: 10;
+  border: 4px double #EAE8FE;
+  width: 45px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-18deg);
+}
+
+/* 잔액 */
+.bg-box {
+  background-color: #EAE8FE;
+  border-radius: 5px;
+  padding: 0 10px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+#input-money {
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  height: 32px;
+  width: 100%;
+  padding: 6px;
+  box-sizing: border-box;
+}
+#input-money::placeholder {
+  color: #bdbdbd;
+  font-size: 13px;
+}
+.section2 .bg-box p {
+  font-weight: 700;
+}
+
+.get-list {
+  background-color: #eae8fe;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  padding: 12px;
+  /* height: 106px; */
+
+  /* overflow: auto -> 내용이 넘칠 때만 스크롤이 생김 */
+  overflow: auto;
+}
+.get-list li {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px 0 10px;
+  height: 46px;
+  border-radius: 5px;
+  font-size: 10px;
+}
+/* li뒤에 있는 li */
+.get-list li ~ li {
+  margin-top: 6px;
+}
+.get-list li img {
+  width: 18px;
+}
+.get-list li strong {
+  /* 감싸도 상관없음 */
+  /* margin-left: 0 0 0 auto; */
+  margin-left: auto;
+
+  width: 30px;
+  height: 30px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  font-size: 14px;
+
+  /* text 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-get {
+  background-color: #6327FE;
+  color: #fff;
+}
+
+.container {
+  display: grid;
+
+  /* grid-template-columns: 200px auto; */
+  grid-template-columns: auto calc((100% - 12px * 2) / 3 );
+  
+  grid-template-rows: 33px 33px 106px;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+
+/* section2 */
