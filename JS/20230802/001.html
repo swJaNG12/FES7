@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String 메서드</title>
+</head>
+<body>
+  <script>
+    let s = 'paullab CEO 이호준';
+    let ss = ' CTO 김창영';
+    let sss = s + ss + ' CTO 홍길동';
+    // replace
+    console.log(s.replace('CEO', 'CFO'));
+    console.log(sss.replace(/C[ET]O/g, '잡부'));
+
+    // replace 매우 고급 문법 보강 설명 //
+    const string = `hojun, lee
+    gildong, hong
+    hojung, choi
+    junho, lee`
+
+
+    let result1 = string.replace(/(\w+), (\w+)/gm, "$2 $1");
+    console.log(result1);
+
+    let result2 = string.replace(/(\w+), (\w+)/gm, '$2 $1');
+    console.log(result2);
+
+    let result3 = string.replace(/(\w+), (\w+)/gm, '제 이름은$2 제 성은 $1 입니다.');
+    console.log(result3);
+
+    // repalceAll
+    // 사용에 주의하세요. 구 브라우저에서 작동하지 않을 확률이 매우 높습니다.
+    // 21년도에 추가된 기능입니다.
+    console.log(sss.replaceAll('CTO', '잡부'));
+
+    // includes
+    console.log(ss.includes('CTO'));
+    console.log(ss.includes('CEO'));
+
+    // 메서드 체이닝
+    // 메서드 체이닝은 길어지면 가독성이 떨어집니다.
+    // 가독성을 위해 개행을 해주시면 좋습니다.
+    console.log(sss
+                  .replace('CEO', 'CTO')
+                  .includes('CEO')
+                  .toString()
+                  .toUpperCase());
+
+    // split
+    let text1 = 'aa bb cc dd'
+    let text2 = 'aa-bb-cc-dd'
+    let text3 = 'aa,bb,cc,dd'
+    let text4 = 'aa,bb-cc-dd' // 중급자 분들만 하세요.
+    // ['aa', 'bb', 'cc', 'dd']
+
+    console.log(text1.split(' '));
+    console.log(text2.split('-'));
+    console.log(text3.split(','));
+    console.log(text4.split(/[,-]/g));
+
+    // trim
+    let text6 = '    aa bb cc dd    ';
+    console.log(text6.trim())
+
+    // padStart
+    let text7 = '123'
+    console.log(text7.padStart(5, '0'))
+    // 카카오 입사문제 일부(padStart, replace만 사용)
+    // 우리의 목표 : 00100 -> '  # #'
+    let text8 = '101'
+    console.log(text8.padStart(5, '0').replaceAll('0',' ').replaceAll('1','#'))
+
+    // concat
+    console.log(text1.concat(text2))
+    console.log(text1)
+  </script>
+</body>
+</html>

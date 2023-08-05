@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>string</title>
+</head>
+<body>
+  <script>
+    let str = 'hello world';
+
+    // slice(시작 인덱스, 종료인덱스)
+    // 시작인덱스부터 종료 인덱스 바로 직전(-1)까지 잘라냅니다.
+    console.log(str.slice(0,7))
+    console.log(str.slice(0,7))
+    console.log(str.slice(7,3)) // 작동은 하는데 빈 문자열이 나옴
+    console.log(str.slice(2)) 
+    // console.log(str.slice(,5 ))  에러
+    console.log(str.slice(-6));
+
+    // substring(시작인덱스, 종료인덱스)
+    // 시작인덱스부터 종료인덱스 바로 직전(-1)까지 잘라냅니다.
+    console.log(str.substring(0,5));
+    console.log(str.substring(0,7));
+    console.log(str.substring(-6,0));
+    console.log(str.substring(-6));
+    
+    let str2 = 'paullab CEO 이호준 CTO 홍길동'
+
+    console.log(str2.slice(8,20))
+    console.log(str2.slice(str2.search(/CTO/g), str2.indexOf('CTO')))
+    console.log(str2.substring(8,20))
+    console.log(str2.substring(str2.indexOf('CTO')))
+
+    let ceo = str2.indexOf('CEO');
+    let cto = str2.indexOf('CTO')
+
+    // substr(시작위치, 길이) : 시작인덱스부터 길이만큼 반환합니다.
+    // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/substr
+    // 명세에서 사라질 수도 있음
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring#the_difference_between_substring_and_substr
+    //substr 대신 substring 이나 slice를 사용 권장
+    console.log(txt2.substr(8, 3));
+    console.log(txt2.substr(txt2.indexOf("C"), 3));
+  </script>
+</body>
+</html>

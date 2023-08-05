@@ -1,0 +1,55 @@
+/* sprite 이미지 적용 
+레티나 디스플레이 적용햇음
+*/
+
+[class^="icon"]::before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 22px;
+  height: 22px;
+  background-image: url('images_login/icon_sprites_retina.png');
+  background-size: 117px 84px;
+}
+
+.link-sns-login.icon-facebook {
+  border: 1px solid #2D9CDB;
+}
+
+.link-sns-login.icon-naver {
+  border: 1px solid #00BF18;
+}
+
+.link-sns-login.icon-kakao {
+  border: 1px solid #F2C94C;
+}
+
+.icon-google::before {
+  width: 22px;
+  height: 22px;
+  background-position: -52px -10px;
+  /* background: url("images_login/icon_google.png") no-repeat; */
+}
+
+.icon-naver::before {
+  width: 22px;
+  height: 22px;
+  background-position: -10px -10px;
+  /* background: url("images_login/icon_naver.png") no-repeat; */
+}
+
+.icon-kakao::before {
+  width: 22px;
+  height: 22px;
+  background-position: -10px -52px;
+  /* background: url("images_login/icon_kakao.png") no-repeat; */
+}
+
+.icon-facebook::before {
+  height: 24px;
+  width: 13px;
+  background-position: -93px -10px;
+
+  /* background: url("images_login/icon_facebook.png") center no-repeat; */
+
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>string</title>
+</head>
+<body>
+  <script>
+    // 문자열은 '', "", `` 로 둘러싼 일련의 문자를 가르킵니다.
+    // 줄바꿈
+    let s = 'hello\nworld';
+    s = `hello
+world`
+    console.log(s)
+
+    let name = '장성우'
+    console.log(name[0]) // '장'
+    console.log(name[100]) // undefined
+    console.log(name[-1]) // undefined
+
+    // 문자열의 자식연산
+    console.log('1' + 2 + 3) // '123'
+    console.log(2 + 3 + '1') // '51'
+    console.log(2 + 3 + +'1') // 6
+    console.log('lee' + 'hojun')
+    console.log('hojun'*3) // NaN
+
+    // 형 변환
+    console.log(+'1' + +'1') // 묵시적 형 변환, 권하지 않습니다.
+    console.log(Number('1') + Number('1')) // 권하지 않습니다.
+    console.log(parseInt('1') + parseInt('1')) // 권합니다. 
+    console.log(parseInt(undefined))
+    console.log(1 + 1)
+    console.log(String(1) + String(1)) // 권하지 않습니다.
+    // console.log(1.toStrint()) // 오류가 생김, .울 메서드가 아니라 소수점으로 해석함
+
+    console.log((1).toString() + (1).toString()) // 가능한 코드입니다.
+    let x = 10
+    console.log(x.toString() + x.toString()) // 이 방법을 권합니다.
+
+  </script>
+</body>
+</html>

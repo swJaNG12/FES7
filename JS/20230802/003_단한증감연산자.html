@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>단항 연산자</title>
+</head>
+<body>
+  <script>
+    // 단항연산
+    console.log(-2)
+    console.log(-(-2))
+    // console.log(--2) // 에러
+    console.log(+4)
+    console.log(+'4')
+
+    // 소수점 제거(부정을 제거), 비트연산자
+    console.log(~~3.14) // 3
+
+
+    // 증감연산자
+    let num = 3; // 증감연산자는 할당연산자를 통해 할당된 값에만 사용 가능합니다.
+    console.log("증감연산 : ", ++num);
+    console.log("증감연산 : ", num++); // 출력하고 나서 연산을 합니다.
+    console.log("증감연산 : ", --num);
+    console.log("증감연산 : ", num--); // 출력하고 나서 연산을 합니다.
+    // why 출력해보니 다 4로 출력이 될까요?
+    // 답은 증감연산자의 위치에 있습니다. 그러나 여러분들이 이 
+    // 증감연산자에 위치를 고려하실 필요는 실무에서 거의 발생하지 않습니다.
+
+    // 비교연산자
+    console.log("비교연산 : ", 2 > 3);
+    console.log("비교연산 : ", 2 >= 3);
+    console.log("비교연산 : ", 2 < 3);
+    console.log("비교연산 : ", 2 <= 3);
+    console.log("비교연산 : ", 2 == 3); 
+    console.log("비교연산 : ", 2 === 3);
+    // 등호 2개를 권하지 않습니다. 
+    // 실무에서는 등호 3개를 사용하시길 권해드립니다.
+    
+  </script>
+</body>
+</html>

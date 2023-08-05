@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    // parseInt
+    console.log(parseInt('123')) // 123
+    console.log(parseInt('123.123')) // 123
+    console.log(parseInt('123px')) // 123
+    console.log(parseInt('      10')) // 10
+    console.log(parseInt('px123')) // NaN
+    console.log(parseInt('123.123px')) // 123.123
+    console.log(parseInt('px123.123')) // NaN
+    console.log(parseInt('11', 2)) // 3, 11을 이진수로 생각해서 3으로 반환
+
+    // toString
+    let num = 3;
+    num.toString(); // '3'
+
+    // isNaN
+    isNaN(NaN);
+    isNaN(10);
+    isNaN("10");
+    isNaN("10px");
+    isNaN([]);
+    isNaN({});
+
+    // Number.isNaN사용을 권고해드립니다.
+    Number.isNaN(NaN);
+    Number.isNaN(10);
+    Number.isNaN("10");
+    Number.isNaN("10px");
+    Number.isNaN([]);
+    Number.isNaN({});
+
+    // math
+    Math.PI; // 3.141592653589793
+    Math.round(10.49); // 10
+    Math.round(10.77); // 11
+    Math.abs(-10); // 10
+    Math.pow(2, 3); // 8
+    Math.pow(4, 0.5); // 2
+    Math.sqrt(16); // 4
+    Math.random(); // 0 ~ 1 사이의 랜덤한 숫자
+    Math.ceil(10.1); // 11
+    Math.floor(10.9); // 10
+    Math.max(1, 2, 3, 4, 5); // 5
+    Math.min(1, 2, 3, 4, 5); // 1
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    /* 요소 숨김, IR 기법 */
+    .txt-hide {
+      overflow: hidden;
+      width: 1px;
+      height: 1px;
+
+      /* clip 자르다 path 경로 , 경로에 따라서 html요소를 잘라냄 top, left, right, bottom*/
+      /* width 0, height 0 을 주지 않는 이유는 접근성 때문이다. 0처리를 해버리면 브라우저는 요소가 없다고 생각해서 스크린리더가 읽지 못한다. */
+      clip-path: inset(50%);
+    }
+    .label-hold {
+      position: relative;
+    }
+    .label-hold::before {
+      display: inline-block;
+      content: '';
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+      border: 1px solid #000;
+      vertical-align: -5px;
+    }
+    .inpHold:focus-visible+.label-hold::before {
+      outline: 2px solid skyblue;
+      outline-offset: 3px;
+    }
+    .label-hold::after {
+      content: '';
+
+      /* display를 주지 않아도 이미지가 나타나는 이유는 position을 absolute를 주면 display가 block이 되기 때문이다. */
+      position: absolute;
+      top: -3px;
+      left: 20px;
+
+      width: 22px;
+      height: 22px;
+
+      /* background : url background-position/background-size background-repeat */
+      background: url(./images/checkmark.png) 0 0 / 22px no-repeat;
+      background-image: url(./images/checkmark.png);
+      background-size: 22px;
+      background-repeat: no-repeat;
+      transition: all .5s ease-in-out;
+      opacity: 0;
+    }
+    /* 가상 클래스 선택자 : 가상의 클래스를 만들어서 요소의 상태(스타일)을 변화시킨다. */
+    .inpHold:checked+.label-hold::after {
+      left: 0;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <input class="txt-hide inpHold" type="checkbox" id="inpHold">
+  <label for="inpHold" class="label-hold">로그인 상태 유지</label>
+</body>
+</html>
