@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    function printMe({ name, age, email } = {}) {
+      console.log(`이름: ${name}, 나이: ${age}, 이메일: ${email}`);
+  }
+
+  const me = {
+    name: '재현',
+    age: 25,
+    email: 'jaehyun@something.com'
+  };
+
+  printMe(me);
+  </script>
+</body>
+</html>

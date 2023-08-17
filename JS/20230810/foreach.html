@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    let studentList = [
+            {
+                id: 1, name: '원범', score: 'great'
+            },
+            {
+                id: 2, name: '김진', score: 'so cute'
+            },
+            {
+                id: 3, name: '혜원', score: 'good good'
+            },
+            {
+                id: 4, name: '재현', score: 'too cool for school'
+            }
+    ];
+
+    studentList.forEach(obj => console.log(obj['name']));
+
+    // studentList = studentList.map(el => el['score'] = `${el['score']}😍`)
+    
+    const arr = studentList.map(el => {
+      return 
+    })
+
+    console.log(studentList)
+    // studentList.forEach(obj => console.log(obj['score']));
+  </script>
+</body>
+</html>

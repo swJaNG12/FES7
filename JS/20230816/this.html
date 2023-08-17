@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    body {
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn1">클릭해봐요!</button>
+  <button id="btn2">클릭해봐요!</button>
+
+  <script>
+    // let {one: one } = {one : 1};
+    // console.log(one)
+
+    //this
+    // 1
+    function a() {
+      console.log(this)
+    }
+    a();
+
+    // 2
+    const myObj = {
+      val1: 100,
+      func1() {
+        console.log(this)
+      }
+    }
+
+    const button1 = document.getElementById('btn1');
+    const button2 = document.getElementById('btn2');
+
+    button1.addEventListener('click', myObj.func1);
+    button2.addEventListener('click', myObj.func1);
+    // let test = myObj.func1; // window
+    // test();
+    // myObj.func1(); // myObj
+
+    
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    body {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn1">클릭</button>
+  <button id="btn2">클릭</button>
+  <script>
+    // function a() {
+    //   console.log(this)
+    // }
+    // a();
+
+    // let myObj = {
+    //   val1: 100,
+    //   func1: function() {
+    //     console.log(this);
+    //   }
+    // }
+
+    // let test = myObj.func1;
+
+    // let button1 = document.getElementById('btn1');
+    // button1.addEventListener('click', myObj.func1);
+    // let button2 = document.getElementById('btn2');
+    // button2.addEventListener('click', test);
+    
+    function sayName() {
+      console.log(this.name);
+    }
+
+    var name = 'hero';
+    // 전역으로 선언한 name 변수의 앞에는 window가 생략되어 있습니다.
+    // 때문에 window.name === 'hero'가 성립합니다.
+    let peter = {
+      name: 'peter parker',
+      sayName : sayName
+    }
+
+    let bruce = {
+      name: 'bruce wayne',
+      sayName : sayName
+    }
+
+    sayName();
+    peter.sayName();
+    bruce.sayName();
+    
+  </script>
+</body>
+</html>
