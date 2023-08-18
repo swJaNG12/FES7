@@ -47,25 +47,25 @@
     const container = document.querySelector('.container');
     const box = document.querySelector('.box');
     
-    const btnRed = document.querySelector('.btn-red');
-    const btnYellow = document.querySelector('.btn-yellow');
-    const btnGreen = document.querySelector('.btn-green');
+    // const btnRed = document.querySelector('.btn-red');
+    // const btnYellow = document.querySelector('.btn-yellow');
+    // const btnGreen = document.querySelector('.btn-green');
 
     const btns = document.querySelectorAll('button');
 
-    const colors = ['red', 'green', 'yellow'];
+    // button태그에 id로 color값을 넣으면 자동으로 배열 생성    
+    const colors = Array(btns.length).fill(0).map((_,i) => btns[i].id);
+    // const colors = ['red', 'green', 'yellow'];
 
     function updateBoxColor(color) {
-      // v1
+      // v1, 다른 color 클래스만 골라서 삭제
       for(const c of colors) {
         if(box.classList.contains(c)) {
           box.classList.remove(c);
         }
       }
-
-      // v2
+      // v2, 모든 color 클래스 삭제 후 추가
       // box.classList.remove('red', 'green','yellow');
-
       box.classList.add(color);
     }
 
@@ -74,10 +74,15 @@
       console.log(e.target.id);
       updateBoxColor(clickedColor);
     }
-    
-    btnRed.addEventListener('click', checkBtnColor);
-    btnYellow.addEventListener('click', checkBtnColor);
-    btnGreen.addEventListener('click',checkBtnColor);
+
+
+    // 하나하나 버튼 선언할 필요없음
+    btns.forEach((el, i) => {
+      el.addEventListener('click', checkBtnColor)
+    })
+    // btnRed.addEventListener('click', checkBtnColor);
+    // btnYellow.addEventListener('click', checkBtnColor);
+    // btnGreen.addEventListener('click',checkBtnColor);
   </script>
 </body>
 </html>
