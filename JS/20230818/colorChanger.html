@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .container {
+      border: 1px solid red;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+    }
+    .box {
+      width: 400px;
+      height: 400px;
+      background-color: #000;
+    }
+    ul {
+      display: flex;
+      gap: 100px;
+    }
+    .red {
+      background-color: red;
+    }
+    .yellow {
+      background-color: yellow;
+    }
+    .green {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box"></div>
+    <ul>
+      <li><button id="red" class="btn-red">빨강</button></li>
+      <li><button id="yellow" class="btn-yellow">노랑</button></li>
+      <li><button id="green" class="btn-green">초록</button></li>
+    </ul>
+  </div>
+
+  <script>
+    const container = document.querySelector('.container');
+    const box = document.querySelector('.box');
+    
+    const btnRed = document.querySelector('.btn-red');
+    const btnYellow = document.querySelector('.btn-yellow');
+    const btnGreen = document.querySelector('.btn-green');
+
+    const btns = document.querySelectorAll('button');
+
+    const colors = ['red', 'green', 'yellow'];
+
+    function updateBoxColor(color) {
+      // v1
+      for(const c of colors) {
+        if(box.classList.contains(c)) {
+          box.classList.remove(c);
+        }
+      }
+
+      // v2
+      // box.classList.remove('red', 'green','yellow');
+
+      box.classList.add(color);
+    }
+
+    function checkBtnColor(e) {
+      const clickedColor = e.target.id;
+      console.log(e.target.id);
+      updateBoxColor(clickedColor);
+    }
+    
+    btnRed.addEventListener('click', checkBtnColor);
+    btnYellow.addEventListener('click', checkBtnColor);
+    btnGreen.addEventListener('click',checkBtnColor);
+  </script>
+</body>
+</html>

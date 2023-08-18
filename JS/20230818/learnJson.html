@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    // object => json
+    const json = '{"result": true, "count": 42}';
+    const obj = JSON.parse(json);
+    console.log(obj)
+    console.log(typeof obj)
+
+    // array => json
+    const json2 = '[1,2,3,[1,2,3]]';
+    const arr = JSON.parse(json2);
+    console.log(arr)
+
+
+    // obj => json
+    const obj2 = {result: true, count: 42};
+    const json3 = JSON.stringify(obj2);
+    console.log(json3)
+
+    // 배열의 완전복사
+    let l = [10, 20, 30];
+    let a = JSON.parse(JSON.stringify(l));
+    a[0] = 1000;
+
+
+    // 객체의 완전복사(예전))
+    let l2 = {ten:10, thirty:{four: 40}};
+    let a2 = JSON.parse(JSON.stringify(l2));
+    console.log(l2)
+
+    // 객체의 완전복사(structuredClone)
+    let l3 = {ten:10, thirty:{four: 40}};
+    let a3 = structuredClone(l3);
+    console.log(l3)
+  </script>
+</body>
+</html>
