@@ -1,0 +1,25 @@
+nav {
+  ul {
+    border: solid 1px #000;
+    display: flex;
+    justify-content: space-between;
+    li {
+      list-style: none;
+      &:hover {
+        background-color: #fff;
+      }
+      &:first-child {
+        color: #fff;
+      }
+      &:nth-child(1) {
+        background-color: red;
+      }
+      &:nth-child(2) {
+        background-color: green;
+      }
+      &:nth-child(3) {
+        background-color: blue;
+      }
+    }
+  }
+}

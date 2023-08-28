@@ -1,0 +1,29 @@
+// 이것을 sass로, 
+// .box-1 {
+//   background-color: red;
+// }
+
+// .box-2 {
+//   background-color: green;
+// }
+// .box-2 {
+//   background-color: blue;
+// }
+
+.box {
+  &-1 {
+    background-color: yellow;
+  }
+  &-2 {
+    background-color: yellow;
+  }
+  &-3 {
+    background-color: yellow;
+  }
+}
+
+div {
+  &:hover {
+    background-color: red;
+  }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <h1>나의 todo list</h1>
+  <p>1. 오늘 저녁에는 부대찌게를 끓여 먹겠다.<button type="button">삭제</button></p>
+  <p>2. 후식으로 슈팅스타를 먹겠다.<button type="button">삭제</button></p>
+  <p>3. 자기 전에 반드시 내일 아침 메뉴를 생각해두겠다.<button type="button">삭제</button></p>
+
+
+  <script>
+    const ps = document.querySelectorAll('p');
+    ps.forEach(p => {
+      p.addEventListener('click',e => {
+        // 1. firstChild.nodeValue
+        console.log(p.firstChild.nodeValue);
+        alert(p.firstChild.nodeValue);
+
+        // 2. slice 이용하기
+        // console.log(p.textContent.slice(0,-2));
+        // alert(p.textContent.slice(0,-2));
+
+      })
+    })
+
+    const btns = document.querySelectorAll('button');
+    btns.forEach(btn => {
+      btn.addEventListener('click', e => {
+        let result = confirm('식제 하시겠습니까?');
+
+        e.stopPropagation()
+
+        if(result) {
+          // btn.parentElement.remove();
+          // 바로 상위의 p 선택
+          btn.closest('p').remove();
+        }
+      })
+    })
+
+
+    // const pList = document.querySelectorAll('p');
+    // const deleteBtns = document.querySelectorAll('button');
+
+    // pList.forEach(p => {
+    //   p.addEventListener('click', e => {
+    //     console.dir(e.target.textContent)
+    //     console.log(e.target.childNodes[0])
+    //     alert(e.target.textContent)
+    //   })
+    // })
+
+    // deleteBtns.forEach(btn => {
+    //   btn.addEventListener('click', e => {
+    //     const del = confirm('삭제하겠습니까?');
+    //     if(del) {
+    //       e.target.parentElement = btn;
+    //     }
+
+    //     console.log(e.target.parentElement);
+    //     console.log(e.currentTarget);
+    //     e.stopPropagation()
+    //   })
+    // })
+  </script>
+</body>
+</html>

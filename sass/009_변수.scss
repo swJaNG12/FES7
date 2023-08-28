@@ -1,0 +1,15 @@
+$sungwoo1: #000;
+$sungwoo2: #fff;
+// 한글 변수는 권장하지 않습니다.
+$bigFont: 32px;
+
+.one {
+  font-size: $bigFont;
+}
+
+.two {
+  color: $sungwoo1;
+}
+.three {
+  color: $sungwoo2;
+}

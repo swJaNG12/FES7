@@ -1,0 +1,12 @@
+.one {
+  color: red;
+}
+.one .two {
+  color: green;
+}
+.one .two .theree {
+  color: blue;
+}
+.four {
+  color: pink;
+}/*# sourceMappingURL=008_중첩벗어나기_엠퍼센드 여느.css.map */

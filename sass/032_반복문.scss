@@ -1,0 +1,7 @@
+$test-array: 'top', 'right', 'bottom', 'left';
+
+@each $position in $test-array {
+  .border-#{$position} {
+    border-#{$position}: 1px soild #000;
+  }
+}

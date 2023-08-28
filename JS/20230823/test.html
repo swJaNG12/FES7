@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    // function Test() {};
+    // const obj = new Test();
+
+    // function NewFactory(name) {
+    //   this.name = name;
+    // }
+    // NewFactory.prototype.sayName = function() {
+    //   console.log(`제 이름은 ${this.name}입니다.`)
+    // }
+
+    // 객체의 상속
+    // 자바스크립트의 상속은 기본적으로 prototype을 통해 일어납니다.
+    // const obj = {
+    //   name: 'test'
+    // }
+    // console.log(obj.hasOwnProperty('name')); // true
+    // const arr = [];
+    // console.log(arr.hasOwnProperty('name')); // false
+
+    // 배열에서 객체의 prototype에 있는 hasOwnProperty를 쓸 수 있는 이유는 배열이 상속받은 프로토타입인 Object.prototype을 타고타고 올라가서(프로토타이 체이닝) 쓸 수 있는 것이다.
+
+    // var Student = function (name, grade) {
+    //   this.name = name;
+    //   this.grade = grade;
+    // };
+
+    // var man = new Student('hyun', 1);
+
+    // function Parent() {
+    //   this.name = name;
+    // }
+    // Parent.prototype.rename = function(name) {
+    //   this.name = name;
+    // }
+    // Parent.prototype.sayName = function() {
+    //   console.log(this.name);
+    // }
+
+    // Parent의 this가 Child의 인스턴스를 바라보게 만든다.
+    // call 메서드를 통해 parent의 프로퍼티를 상속받을 수 있습니다.
+    // function Child() {
+    //   Parent.call(this);
+    //   this.newName = '소울';
+    // }
+
+    // Child가 parent의 프로토타입을 상속하게 만든다. 
+    
+    // class Robot {
+    //   // 클래스의 생성자 함수입니다. 하나의 클래스는 하나의 생성자만 정의할 수 있습니다.
+    //   // 그리고 생성자 함수는 new 키워드가 호출될때 자동으로 실행됩니다.
+    //   constructor(name) {
+    //     this.name = name;
+    //   }
+    //   say() {
+    //     console.log(`${this.name}`);
+    //   }
+    // }
+    
+    // class 상속받기
+    class Sausage {
+      constructor(ing1, ing2) {
+        this.ing1 = ing1;
+        this.ing2 = ing2;
+      }
+      taste() {
+        console.log(`${this.ing1}와 ${this.ing2}맛이 나는 소시지`)
+      }
+    }
+
+    class FireSausage extends Sausage {
+      taste() {
+        console.log(`${this.ing1}과 ${this.ing2} 거기에 불맛이 나는 소시지`);
+      }
+    }
+  </script>
+</body>
+</html>

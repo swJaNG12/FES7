@@ -1,0 +1,40 @@
+
+
+// input: box(100, r) // r은 사각형 , rect입니다.
+// outtpu: 
+// .one {
+//   width: 100px;
+//   height: 100px;
+//   background-color: red;
+
+// }
+
+// // input: box(100, c) // c는 원, circle입니다.
+// .two {
+//   width: 100px;
+//   height: 100px;
+//   background-color: blue;
+//   border: 1px solid black;
+//   border-radius: 50%;
+// }
+@mixin box($length, $radius) {
+  width: $length;
+  height: $length;
+  background-color: red;
+  @if($radius == 'c') {
+    border-radius: 50%;
+  }
+}
+
+.rect {
+  @include box(100px, r);
+}
+
+.circle {
+  @include box(100px, c);
+  background-color: blue;
+  border: 1px solid black;
+}
+// ||```
+
+// ```||

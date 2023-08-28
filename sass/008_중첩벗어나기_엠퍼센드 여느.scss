@@ -1,0 +1,12 @@
+.one  {
+  color: red;
+  .two {
+    color: green;
+    .theree {
+      color: blue;
+      @at-root .four {
+        color: pink;
+      }
+    }
+  }
+}

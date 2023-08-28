@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  height: 5000px;
+  background: linear-gradient(to bottom, gold, royalblue);
+}
+svg {
+  /* 반응형을 위해 width:100% */
+  /* svg 파일에 width, height값이 없으면 기본적으로 100%로 들어가기 때문에 자동으로 반응형 처럼 늘었다 준다. 여기서 사용하는 svg를 보면 width, height값이 없기 때문에 이 값을 주지 않더라도 준 것 같은 효과를 받는다. 하지만 확실히 하기 위해서 여기서는 100% 값을 주고 있다. */
+  width: 100%; 
+
+  /* svg 뷰포트 가운데 위치시키기 */
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+path {
+  /* 선의 색 */
+  stroke: #fff;
+  
+  /* 선의 두께 */
+  stroke-width: 5px;
+
+  /* 선의 radius */
+  stroke-linecap: round;
+
+  /* 선이 겹쳐진 부분 처리 */
+  stroke-linejoin: round;
+}

@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  height: 5000px;
+  background: linear-gradient(to bottom, gold, royalblue);
+}
+.wrap {
+  /* 반응형을 위해 width:100% */
+  /* svg 파일에 width, height값이 없으면 기본적으로 100%로 들어가기 때문에 자동으로 반응형 처럼 늘었다 준다. 여기서 사용하는 svg를 보면 width, height값이 없기 때문에 이 값을 주지 않더라도 준 것 같은 효과를 받는다. 하지만 확실히 하기 위해서 여기서는 100% 값을 주고 있다. */
+  width: 100%; 
+
+  /* svg 뷰포트 가운데 위치시키기 */
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+
+
+  /* btn-open 가운데 정렬 */
+  /* text-align: center; */
+}
+
+path {
+  /* 선의 색 */
+  stroke: #fff;
+  
+  /* 선의 두께 */
+  stroke-width: 5px;
+
+  /* 선의 radius */
+  stroke-linecap: round;
+
+  /* 선이 겹쳐진 부분 처리 */
+  stroke-linejoin: round;
+}
+
+
+/* button */
+/* btn-open 가운데 정렬 방법1 */
+.wrap {
+  text-align: center;
+}
+/* btn-open 가운데 정렬 방법2 */
+/* .btn-open {
+  display: block;
+  margin: 0 auto;
+} */
+
+
+.btn-open {
+  border: 1px solid rgba(255, 255, 255, .5);
+  background: none;
+  color: #fff;
+  height: 40px;
+  padding: 0 100px;
+  border-radius: 40px;
+  font-size: 20px;
+
+  /* js에서 제어 */
+  opacity: 0;
+
+
+  transition: all .3s;
+}
+.btn-open:enabled {
+  cursor: pointer;
+
+}
+.btn-open:enabled:hover {
+  color: royalblue;
+  background-color: transparent;
+}
+
+/* modal */
+.modal {
+  width: 300px;
+  height: 240px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, .2) 0 0 30px;
+
+  background-color: royalblue;
+  color: #fff;
+  text-align: center;
+}
+.modal ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  
+  border-top: 1px solid rgba(255, 255, 255, .3);
+  padding-top: 10px;
+}
+.modal ul a {
+  display: inline-block;
+  background-color: #fff;
+  text-decoration: none;
+  padding: 8px 16px 6px;
+  border-radius: 40px;
+  color: royalblue;
+}
+
+/* 모달 닫기 버튼 */
+.modal {
+  /* btn-clost 위치 기준 static만 아니면 되기 때문에 fixed도 상관없음 */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  display: none;
+}
+.modal.active,
+.modal.active + .dim {
+  display: block;
+}
+/* 검은 배경 */
+.dim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .6);
+  /* backdrop-filter: blur(2px); */
+  display: none;
+}
+
+.btn-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0;
+  background-color: #fff;
+  cursor: pointer;
+}
+.btn-close img {
+  width: 70%;
+  vertical-align: top;
+}

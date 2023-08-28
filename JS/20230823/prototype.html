@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    function NewFactory2(name){
+    this.name = name;
+}
+
+    NewFactory2.prototype.sayYourName = function(){
+        console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+    }
+
+    const robot = new NewFactory2('성우');
+
+
+    // 실습 : 우리가 객체지향 개념에서 만들었던 ‘나’ 와 ‘대상’ 객체를 생성자를 통해서 만들어 볼 수 있도록 코드를 수정해봅시다.
+
+    // function Me(name, age) {
+    //   this.name = name;
+    //   this.age = age;
+    // }
+
+    // // 생성자 함수의 메서드를 프로토타입에 등록
+    // Me.prototype.scream = function() {
+    //   console.log('lolololo!!!!');
+    // }
+    // Me.prototype.cry = function(animal) {
+    //   animal.cry();
+    // }
+
+    // function Animal(kind) {
+    //   this.kind = kind;
+    // }
+
+    // Animal.prototype.cry = function() {
+    //   console.log('!~!~!~!~!!');
+    // }
+
+    function Me() {
+      this.address = '김포';
+      this.phoneNum = '010';
+    }
+      
+    Me.prototype.name =  '성';
+    Me.prototype.canWalk = function() {
+      console.log('성우 걷는다.')
+    }
+    Me.prototype.teaching = function(student) {
+      student.levelUp();
+    }
+
+    function Lion() {
+      this.level = 0;
+    }
+    Lion.prototype.levelUp = function() {
+      this.level++;
+    }
+  </script>
+</body>
+</html>

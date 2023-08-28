@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    class Robot {
+      constructor(name) {
+        // 프로퍼티 선언(contructor 안에서 선언)
+        this.myName = name;
+      }
+      // 메서드 선언
+      sayYourName() {
+        console.log(`제 이름은 ${this.myName}입니다. 삐리비빌비`)
+      }
+    }
+
+    class Person {
+      constructor(name, age, gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.level = 0;
+      }
+      greet() {
+        console.log('안녕하세요. 장성우입니다.');
+      }
+      study() {
+        this.level++;
+        console.log(`공부를 했습니다. level이 1 올랐습니다. 현재 레밸은 ${this.level}입니다.`);
+      }
+    }
+  </script>
+</body>
+</html>

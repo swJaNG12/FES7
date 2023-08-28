@@ -1,0 +1,13 @@
+.box-1 {
+  background-color: yellow;
+}
+.box-2 {
+  background-color: yellow;
+}
+.box-3 {
+  background-color: yellow;
+}
+
+div:hover {
+  background-color: red;
+}/*# sourceMappingURL=007_부모선택자_엠퍼샌드_연습.css.map */

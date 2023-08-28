@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <article class="parent">
+    <ol>
+        <li><button class="btn-first" type="button">버튼1</button></li>
+        <li><button type="button">버튼2</button></li>
+        <li><button type="button">버튼3</button></li>
+    </ol>
+  </article>
+
+  <script>
+    const parent = document.querySelector('.parent');
+    // parent.addEventListener('click', function(e) {
+    //   console.log(e.target);
+
+    //   이벤트가 발생한 대상을 조건식으로 특정하기
+    //   if(e.target.nodeName === 'LI') {
+    //     e.target.innerHTML = '<button>버튼4</button>';
+    //   }
+    // })
+
+
+    // this
+    // function 키워드, 이벤트 리스너 함수 내부에서의 this 값은 이벤트가 연결된 노드를 참조합니다.
+    // parent.addEventListener('click', function(e) {
+    //   console.log(this);
+    // })
+    // 화살표 함수의 this, 상위 스코프를 가리킨다.
+    // parent.addEventListener('click',e => {
+    //   console.log(this);
+    // })
+
+
+    myObj = {
+      name: "sungwoo",
+      walk() {
+        parent.addEventListener('click', () => {
+          console.log(this)
+          console.log(this.name);
+        })
+      }
+    }
+    
+  </script>
+</body>
+</html>
