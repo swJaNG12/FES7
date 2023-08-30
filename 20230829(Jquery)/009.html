@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <input type="text">
+  <script>
+    // document.addEventListener('keyup', e => {
+    //   console.log('keyup, e.key : ', e.key)
+    //   console.log('keyup, e.code : ', e.code)
+    // })
+
+    // document.addEventListener('keydown', e => {
+    //   console.log('keydown, e.key : ', e.key)
+    //   console.log('keydown, e.code : ', e.code)
+    // })
+
+    document.querySelector('input').addEventListener('input', e => {
+      console.log(e.data)
+    })
+  </script>
+</body>
+</html>

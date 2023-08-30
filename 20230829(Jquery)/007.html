@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>attr</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body>
+  <label for="">
+    아이디
+    <input type="text" value="FES7" id="">
+  </label>
+
+  <script>
+    console.log('Jquery value: ',$('input').attr('value'));
+    console.log('Jquery value: ',$('input').val());
+    // console.log('Jquery value: ',$('input').removeAttr('value'));
+
+
+    const inputText =  document.querySelector('input');
+    console.log('JS value: ',inputText.getAttribute('value'));
+    console.log('JS value: ',inputText.value);
+    inputText.removeAttribute('value');
+    inputText.setAttribute('value', '프론트앤드 7기');
+    inputText.setAttribute('placeholder', '입력해주세요');
+
+    // localStorage.setItem('프론트앤드', '서동현');
+    // console.log(localStorage.getItem('프론트앤드'));
+    // localStorage.removeItem('프론트앤드');
+
+    inputText.style.color = 'royalblue';
+
+    inputText.classList.add('class1');
+    inputText.classList.add('class2');
+    inputText.classList.remove('class2');
+    inputText.classList.toggle('class2');
+    console.log(inputText.classList);
+    console.log(inputText.classList.value.indexOf('class1'));
+    console.log(inputText.classList.value.indexOf('class2'));
+    console.log(inputText.classList[1]);
+    console.log(inputText.classList.value.indexOf('dddd'));
+
+    inputText.classList.forEach((el, i) => {
+      console.log(el, i)
+    })
+    
+    
+
+
+  </script>
+</body>
+</html>

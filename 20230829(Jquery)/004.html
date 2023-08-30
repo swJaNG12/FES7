@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <p>hello <strong style="display: none;">world</strong> <script>document.querySelector('p')</script>
+  </p>
+  <script>
+
+    const elementP = document.querySelector('p');
+
+    console.log('elementP : ', elementP);
+
+    // 요소 내 HTML 모두 반환
+    console.log('innerHTML : ',elementP.innerHTML);
+    
+    // 렌더링된 텍스트를 반환
+    console.log('innerText : ',elementP.innerText);
+    
+    // 노드와 자손의 텍스트 콘텐츠를 모두 반환
+    console.log('textContent : ',elementP.textContent);
+
+    // 요소 내 HTML 모두 반환
+    console.log('innerHTML length: ',elementP.innerHTML.length);
+    
+    // 렌더링된 텍스트를 반환
+    console.log('innerText length: ',elementP.innerText.length);
+    
+    // 노드와 자손의 텍스트 콘텐츠를 모두 반환
+    console.log('textContent length: ',elementP.textContent.length);
+
+    
+  </script>
+</body>
+</html>
