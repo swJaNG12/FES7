@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <article class="parent">
+    <figure>
+        <img class="figImg"
+            src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202112/13/e4725896-2596-44f0-8b95-ab3faaa76d7d.jpg"
+            alt="">
+        <figcaption class="figCap">
+            유재석씨가 코로나에 돌파 감염되었다는 소식입니다.
+        </figcaption>
+      </figure>
+  </article>
+
+<!-- 
+
+-->
+  <script>
+    // 1. 이미지는 https://file.mk.co.kr/meet/neds/2021/07/image_readtop_2021_654175_16256093474708254.jpg 로 변경합니다.
+    // 2. figcaption 안의 텍스트는 '유재석씨가 수상식에서 환하게 웃고 있다.' 로 변경합니다.
+    const figure = document.querySelector('.parent figure');
+    const img = figure.querySelector('.figImg')
+    const text = figure.querySelector('.figCap');
+
+    // img.src = 'https://file.mk.co.kr/meet/neds/2021/07/image_readtop_2021_654175_16256093474708254.jpg'
+    // text.textContent = '유재석씨가 수상식에서 환하게 웃고 있다.'
+    
+    // 실습 : 위와 같은 HTML 구조를 JS를 이용해 10개를 만들어 브라우저에 랜더링 해봅니다.
+  
+    for(let i = 0; i < 10; i++) {
+      // document.createDocumentFragment
+      const article = document.createElement('aritice');
+      article.setAttribute('class', 'parent');
+      article.innerHTML = `    <figure>
+        <img class="figImg"
+            src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202112/13/e4725896-2596-44f0-8b95-ab3faaa76d7d.jpg"
+            alt="">
+        <figcaption class="figCap">
+            유재석씨가 코로나에 돌파 감염되었다는 소식입니다.
+        </figcaption>
+      </figure>`;
+      document.body.appendChild(article)
+    }
+  </script>
+</body>
+</html>

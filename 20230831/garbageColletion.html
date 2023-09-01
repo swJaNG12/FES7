@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    let me = {age: 30};
+    let you = me;
+    // 이제 {age:30}의 참조 카운트는 2가 됩니다.
+
+    me = null;
+    // 이제 {age:30}의 참조 카운트는 1이 됩니다.
+
+    you = null;
+    // 이제 {age:30}의 참조 카운트는 0이 됩니다. 가비지 컬랙션의 대상이 됩니다.
+
+    let x = {
+      y: {
+        z: 1
+      }
+    };
+    // x가 참조하는 객체를 obj1,
+    // y가 참조하는 객체를 obj2 라고 하겠습니다.
+
+    let a = x; // 이때 obj1 참조카운트는 2이다.   (x, a) 두 가지
+    x = 1;     // 이제 boj1 참조카운트는 1이다.     (a)
+
+    let b = a.y; // 이제 obj2 참조카운트는 2이다.   (b, a.y)
+    a = 2 // 이때 obj1의 참조카운트는 0이다., obj2의 참조카운트는 1이다. (b)
+    // 그런데 obj1안에 아직 참조되고 있는 obj2가 있기때문에 가비지컬렉션의 대상이 되지 않는다.
+    // 이게 바로 메모리 누수이다. 순환참조문제라고 했는데 최신 브라우저에서는 마크스위프 알고리즘을 사용하여 이런 문제를 해결하고 
+    //있다.
+
+
+
+    function outer() {
+      let privateVal = ['test'];
+
+      function getPrivate() {
+        return privateVal;
+      }
+      return getPrivate;
+    }
+
+    const getPrivate = outer();
+    const secretVal = getPrivate();
+  </script>
+</body>
+</html>

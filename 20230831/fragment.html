@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <main>
+    <!-- <article class="parent">
+      <figure>
+          <img class="figImg"
+              src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202112/13/e4725896-2596-44f0-8b95-ab3faaa76d7d.jpg"
+              alt="">
+          <figcaption class="figCap">
+              유재석씨가 코로나에 돌파 감염되었다는 소식입니다.
+          </figcaption>
+        </figure>
+    </article> -->
+  </main>
+
+  <script>
+    const main = document.querySelector('main');
+
+    // for(let i = 0; i < 10; i++) {
+    //   const article = document.createElement('article');
+    //   article.innerHTML = `
+    //     <figure>
+    //       <img class="figImg"
+    //           src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202112/13/e4725896-2596-44f0-8b95-ab3faaa76d7d.jpg"
+    //           alt="">
+    //       <figcaption class="figCap">
+    //           유재석씨가 코로나에 돌파 감염되었다는 소식입니다.
+    //       </figcaption>
+    //     </figure>`;
+
+    //     // 이 코드는 문제가 있다.
+    //     // 여기서 for 문이 돌때마다 렌더링되기 때문이다. 10번
+    //     main.append(article)
+    // }
+
+
+    // 이 문제를 해결하기 위해서 fragment를 사용한다.
+    // const fragment = document.createDocumentFragment();
+    const fragment = new DocumentFragment()
+
+    for(let i = 0; i < 10; i++) {
+      const article = document.createElement('article');
+      article.innerHTML = `
+        <figure>
+          <img class="figImg"
+              src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202112/13/e4725896-2596-44f0-8b95-ab3faaa76d7d.jpg"
+              alt="">
+          <figcaption class="figCap">
+              유재석씨가 코로나에 돌파 감염되었다는 소식입니다.
+          </figcaption>
+        </figure>`;
+        fragment.append(article)
+    }
+    // 이렇게 fragment를 사용하면 딱 1번만 재랜더링되고 끝난다.
+    // main.append(fragment)
+
+
+    // fragment 복제
+    // fragment는 한 번 사용하면 속이 빈 껍데기만 남기때문에 여러번 쓰고 싶다면 복제를 
+    // 해 두어야한다.
+    // cloneNode(true) => 깊은 복사
+    main.append(fragment.cloneNode(true))
+    main.append(fragment.cloneNode(true))
+  </script>
+</body>
+</html>

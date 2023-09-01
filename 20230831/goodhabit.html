@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    'use strict'
+    const aespa = ["카리나", "윈터", "지젤", "닝닝"];
+  // 결과 : ['카리나💖', '윈터💖', '지젤💖', '닝닝💖'];
+
+  const aespa2 = aespa.map(v => v+'💖')
+  
+
+
+  str = 'sds'
+
+  // 앍기 전용객체에 값을 할당하면 안됩니다.(조용한 에러)
+  // 아래 코드들은 에러메시지가없다.
+  var undefined = '1'
+  var Infinity = 100;
+  Math.PI = 0;
+
+  // 지울 수 없는 길을 지으려고 하면 안됩니다.
+  const employee = {
+    firstName: 'john'
+  }
+  delete employee.firstName
+  delete Object.prototype
+
+  function mf (a,a,c) {
+    return a+a+c
+  }
+  mf(1,2,3) // 
+  </script>
+</body>
+</html>

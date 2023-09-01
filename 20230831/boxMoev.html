@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    /* body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .ground {
+      width: 300px;
+      height: 300px;
+      background-color: green;
+      position: relative;
+    } */
+    .box {
+      width: 50px;
+      height: 50px;
+      background-color: aquamarine;
+      position: absolute;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="box"></div>
+
+  <script>
+    const box = document.querySelector('.box');
+    // box.style.left = '100px';
+    // box.style.top = '100px';
+    let pos = 0;
+    const step = 5;
+
+
+    // const move = e => {
+    //   if (e.key === 'ArrowRight' || e.key === 'd') {
+    //     box.style.left = parseInt(box.style.left) + step + 'px';
+    //   } 
+    //   if (e.key === 'ArrowLeft' || e.key === 'a') {
+    //     box.style.left = parseInt(box.style.left) - step + 'px';
+    //   }
+    //   if(e.key === 'ArrowUp' || e.key === 'w') {
+    //     box.style.top = parseInt(box.style.top) - step + 'px';
+    //   }
+    //   if(e.key === 'ArrowDown' || e.key === 's') {
+    //     box.style.top = parseInt(box.style.top) + step + 'px';
+    //   }
+    //   requestAnimationFrame(move)
+    // };
+    // document.addEventListener('keydown', move)
+
+    let keys = '';
+
+    function move(e) {
+      keys = e.key;
+    }
+
+    function stop(e) {
+      keys = '';
+    }
+    document.addEventListener('keydown', move);
+    document.addEventListener('keyup', stop);
+
+    function play() {
+      switch (keys) {
+        case 'ArrowRight':
+          pos += 10;
+          box.style.transform = `translate(${pos}px)`;
+          break;
+        case 'ArrowLeft':
+          pos -= 10;
+          box.style.transform = `translate(${pos}px)`;
+          break;
+      }
+
+      requestAnimationFrame(play)
+    }
+
+    requestAnimationFrame(play)
+
+  </script>
+</body>
+</html>
