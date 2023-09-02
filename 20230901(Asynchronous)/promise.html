@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    // resolve, reject는 둘다 함수이다.
+    const orderCoffee = new Promise((resolve, reject) => {
+      const xhr =  new XMLHttpRequest();
+      xhr.open('GET', 'orderCoffe.txt');
+      xhr.onreadystatechange = () => {
+        if(xhr.readyState === 4) {
+          // 통신이 성공한 경우
+          if(xhr.status === 200) {
+            const result = xhr.responseText;
+            resolve(result);
+            // 통신이 실패한 경우, !!!반드시 통신이 실패했을 경우에 대한 예외 처리를 해야합니다.!!!
+          } else {
+            reject(new Error(`오늘의 커피원두가 다 떨어졌습니다. ${xhr.status}`));
+          }
+        }
+      };
+      xhr.send();
+    });
+
+    // then은 반드시 resolve가 실행되어야(통신에 성공해야) then도 실행된다.
+    // 그리고 resolve의 인자를 then이 그대로 받는다.
+    // catch는 reject가 실행되었을 때 catch가 실행된다.
+    // 그리고 reject의 인자를 catch가 그대로 받는다.
+    orderCoffee.then((asyncResult) => {
+      console.log(asyncResult);
+    }).catch((error) => {
+      console.log(error)
+    })
+
+  </script>
+</body>
+</html>

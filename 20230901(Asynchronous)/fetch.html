@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json').then((response) => {
+      // 이 부분 예외 처리는 url에는 문제없지만 서버문제라든지, 네트워크에 문제가 생겼을때 를 대비해서 작성한다.
+      if(!response.ok) {
+        console.log(response.ok)
+        // thorw 키워드는 new Error() 생성자 함수와 같이 사용할 수 있다.
+        // Error() 생성자로 생긴 에러를 던지는 역할을 한다.
+        throw new Error(`HTTP ERROR!! status ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data)
+    }).catch((error) => {
+      console.error(error)
+    })
+  </script>
+</body>
+</html>

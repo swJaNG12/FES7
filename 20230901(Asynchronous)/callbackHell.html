@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    'use strict';
+
+    class UserStorage {
+      // 사용자가 입력한 값과 유저 정보가 일치하는 유저를 찾습니다.
+      searchUser(userName, password, onSuccess, onError) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', './users.json'); // 요청 초기화
+        xhr.onreadystatechange = () => {
+          if(xhr.readyState === 4 && xhr.status === 200) {
+
+            const result = JSON.parse(xhr.responseText).user.find((item) => {
+              return item.userName === userName && item.password === password
+            });
+            // xhr.reponseText는 JSON 문자열이기 때문에 JSON.parse를 이용해서 
+            // JSON 문자열을 자바스크립트 객체로 바꿔주어야한다.
+            // JSON.parse(xhr.responseText)의 결과는 user를 키로 가지는 객체가 된다.
+            // find 배열을 순회하면서 배열의 데이터가 조건과 일치하면 그 데이터를 반환한다.
+            console.log(result);
+
+            // 사용자가 입력한 정보와 일치하는 유저가 존재한다면
+            if(result) {
+              onSuccess(userName);
+              // 사용자가 입력한 정보와 일치하는 유저가 존재하지 않는다면
+            } else {
+              onError(new Error('User Not Found!!!!'));
+            }
+          }
+        }
+        xhr.send();
+      }
+
+      // 유저에 맞는 인사말을 출력합니다.
+      sayHi(user, onSuccess, onError) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', './greetings.json'); // 요청 초기화
+        xhr.onreadystatechange = () => {
+          if(xhr.readyState === 4 && xhr.status === 200) {
+
+            const result = JSON.parse(xhr.responseText).greetings.find((item) => {
+              return item.userName === user;
+            });
+
+            console.log(result);
+
+            // 사용자가 입력한 유저이름과 일치하는 인사말이 존재한다면
+            if(result) {
+              onSuccess(result);
+              // 사용자가 입력한 유저이름과 일치하는 인사말이 존재하지 않는다면
+            } else {
+              onError(new Error('no greetings!!!!'));
+            }
+          }
+        }
+        xhr.send();
+      }
+    }
+
+    const userStorage =  new UserStorage();
+
+    const userName = prompt('이름을 입력하세요!@!@');
+    const password = prompt('비밀번호를 입력하세요!@!@');
+
+    userStorage.searchUser(
+      userName, 
+      password,
+      (name) => {
+        userStorage.sayHi(
+          name,
+          (result) => {
+            alert(`당신에게 인사합니다!!! ${result.userName}님 ${result.greetings}`)
+          },
+          (error) => {
+            console.log(error);
+          }
+        )
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  </script>
+</body>
+</html>
