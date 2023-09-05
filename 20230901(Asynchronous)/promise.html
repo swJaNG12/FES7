@@ -11,10 +11,11 @@
     // resolve, reject는 둘다 함수이다.
     const orderCoffee = new Promise((resolve, reject) => {
       const xhr =  new XMLHttpRequest();
-      xhr.open('GET', 'orderCoffe.txt');
+      xhr.open('GET', './orderCoffee.txt');
       xhr.onreadystatechange = () => {
         if(xhr.readyState === 4) {
           // 통신이 성공한 경우
+          console.log(xhr)
           if(xhr.status === 200) {
             const result = xhr.responseText;
             resolve(result);
