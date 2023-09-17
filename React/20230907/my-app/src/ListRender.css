@@ -1,0 +1,20 @@
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+.list-area {
+  list-style: none;
+}
+.list-area li {
+  border: 1px solid #000;
+}
+
+.list-area li+li {
+  border-top: none;
+}
+
+.list-area li.visited {
+  background-color: royalblue;
+  color: #fff;
+}
