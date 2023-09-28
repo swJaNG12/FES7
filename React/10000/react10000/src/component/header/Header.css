@@ -1,0 +1,77 @@
+header {
+  margin-bottom: 95px;
+}
+.tit-law {
+  position: relative;
+}
+.tit-law .img-tit {
+  position: relative;
+  z-index: 10;
+  max-width: 564px;
+}
+.tit-law::after {
+  display: block;
+  content: '';
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+
+  /* transform을 쓸 수도 있지만 가로세로 길이를 아니까 margin으로 땡겨옴 */
+  /* margin: -112px 0 0 -112px; */
+  transform: translate(-50%, -50%);
+
+  background-image: url('../../images/title_bg.png');
+  background-position: center;
+
+
+  /* 반응형 작업 */
+
+  /* 방법1 */
+  /* max-width: 225px;
+  width: 100%;
+  padding-top: 100%;
+  background-size: contain;
+  background-repeat: no-repeat; */
+
+  /* 방법2 */
+  max-width: 225px;
+  width: 100%;
+  background-size: contain;
+  aspect-ratio: 1/1;
+}
+.img-txt {
+  max-width: 486px;
+  margin: 125px auto 85px;
+}
+.txt-desc {
+  position: relative;
+  max-width: 475px;
+  margin: 0 auto;
+  line-height: 24px;
+  font-size: 18px;
+}
+.txt-desc .tit-desc {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.txt-desc::before,
+.txt-desc::after {
+  position: absolute;
+  top: 50%;
+  content: '';
+  width: 37px;
+  height: 32px;
+  margin-top: -14px;
+  /* background-color: #000; */
+}
+.txt-desc::before {
+  left: 0;
+  background-image: url('../../images/txt-left.png');
+}
+.txt-desc::after {
+  right: 0;
+  background-image: url('../../images/txt-right.png');
+}

@@ -1,0 +1,12 @@
+.TodoList .searchbar {
+  border: 0;
+  border-bottom: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  padding: 15px;
+  width: 100%;
+}
+
+.list-wrapper {
+  margin: 0;
+  padding: 0px;
+}

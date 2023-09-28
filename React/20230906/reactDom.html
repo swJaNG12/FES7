@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  
+  <h1 class="greeting">
+    hello
+    <li>
+      world
+    </li>
+    . Welcom
+  </h1>
+  <script>
+    // vanila JS로 위의 html 구조 만들기
+    function greetingJS() {
+      const h1 = document.createElement('h1');
+      h1.classList.add('greeting');
+      h1.append(document.createTextNode('hello'));
+
+      const elLi = document.childElement('li');
+      elLi.appendChild(document.createTextNode('world'));
+
+      h1.appendChild(elli);
+      h1.appendChild(document.createTextNode('. welcome'))
+    }
+
+    
+  </script>
+</body>
+</html>

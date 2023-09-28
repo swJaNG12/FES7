@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    // 메모이제이션
+
+    // 피보나치
+    function fn(n) {
+      if(n === 1 || n === 2) return 1;
+      return fn(n-2) + fn(n-1);
+    }
+    // fn(6)
+    // fn(5) + fn(4)
+    //( fn(4) + fn(3) ) + ( fn(3) + fn(2) )
+    // ( ( fn(3) + fn(2) ) + ( fn(2) + fn(1) ) + ( ( fn(2) + fn(1) ) + ( 1 ) ) )
+    // fn(2) + fn(1) + 1 + 1 + 1 + 1 + 1 + 1
+    // 1 + 1 + 1 + 1 + 1 + 1 + 1
+    // 8
+
+    // 메모이제이션 적용
+    // 저장할 수 있는 공간인 상수 빈배열 생성
+    const memo = [];
+
+    function fnMemo(n) {
+      if(n === 1 || n === 2) {
+        memo[n] = 1;
+        return 1;
+      } 
+      // nullish 연산자 사용
+      // return memo[n] ?? (memo[n] = fnMemo(n-1) + fnMemo(n - 2)); 
+      else if(memo[n] !== undefined) {
+        return memo[n];
+      } else {
+        memo[n] = fnMemo(n-1) + fnMemo(n-2);
+        return memo[n];
+      }
+    }
+
+    // fnMemo(6)
+    // memo ==> [ undefined, undefined, undefined, undefined, undefined, undefined, fnMemo(5) + fnMemo(4) ]
+    // memo[6] = fnMemo(5) + fnMemo(4);
+    // memo[5] = 
+    // memo ==> [ undefined, undefined, undefined, undefined, undefined, fnMemo(4) + fnMemo(3), fnMemo(5) + fnMemo(4) ]
+    // memo[4] =
+    // memo ==> [ undefined, undefined, undefined, undefined, fnMemo(3) + fnMemo(2), fnMemo(4) + fnMemo(3), fnMemo(5) + fnMemo(4) ]
+    // memo[3] =
+    // memo ==> [ undefined, undefined, undefined, fnMemo(2) + fnMemo(1), fnMemo(3) + fnMemo(2), fnMemo(4) + fnMemo(3), fnMemo(5) + fnMemo(4) ]
+
+    // memo[2] =
+    // memo ==> [ undefined, undefined, 1, fnMemo(2) + fnMemo(1), fnMemo(3) + fnMemo(2), fnMemo(4) + fnMemo(3), fnMemo(5) + fnMemo(4) ]
+    // memo[1] =
+    // memo ==> [ undefined, 1, 1, fnMemo(2) + fnMemo(1), fnMemo(3) + fnMemo(2), fnMemo(4) + fnMemo(3), fnMemo(5) + fnMemo(4) ]
+
+    // memo ==> [ undefined, 1, 1, 1 + 1, fnMemo(3) + fnMemo(2), fnMemo(4) + fnMemo(3), fnMemo(5) + fnMemo(4) ]
+    // memo ==> [ undefined, 1, 1, 1 + 1, 2 + 1, fnMemo(4) + fnMemo(3), fnMemo(5) + fnMemo(4) ]
+    // memo ==> [ undefined, 1, 1, 1 + 1, 2 + 1, 3 + 2, fnMemo(5) + fnMemo(4) ]
+    // memo ==> [ undefined, 1, 1, 1 + 1, 2 + 1, 3 + 2, 5 + 3 ]
+    // memo ==> [ undefined, 1, 1, 2, 3, 5, 8 ]
+  </script>
+</body>
+</html>

@@ -81,7 +81,7 @@
     const userName = prompt('이름을 입력하세요!@!@');
     const password = prompt('비밀번호를 입력하세요!@!@');
 
-    userStorage.searchUser(userName, password)
+    userStorage.searchUser(userName, password)       
       .then((result) => {
         return userStorage.sayHi(result);
       }).then((result) => {

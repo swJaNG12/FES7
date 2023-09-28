@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    function Header({ menuOne, menuTwo }) {
+      
+      return (
+        <div>
+          Header
+          <div>menu</div>  
+          <div>{menuOne}</div>  
+          <div>{menuTwo}</div>  
+        </div>
+      );
+    }
+
+    const body = (
+      <div>
+        {/*Header('about', 'product')*/}  
+        <Header menuOne='about' menuTwo='product' />
+        {console.log('hello jsx')}
+        {1+1}
+        {'hello world'}
+        {<br/>}
+        {'hehe'}
+        <h1>hellhellhe</h1>
+      </div>
+    )
+
+    const root = ReactDOM.createRoot(document.querySelector('#root'));
+    root.render(body) 
+  </script>
+</body>
+
+</html>

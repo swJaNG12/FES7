@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    // 1
+    // let name = '재현',
+    //   weapon = '검';
+
+    // function attack() {
+    //   return `${name}이 ${weapon}으로 공격합니다!!`;
+    // }
+
+    // function changeWeapon(){
+    //   weapon = '창';
+    //   return `무기가 ${weapon}으로 교체되었습니다.`
+    // }
+
+
+    // 2
+    // const knight = {
+    //   name: '재현',
+    //   weapon: '검',
+    //   attack() {
+    //     const { name, weapon } = this;
+    //     return `${name}이 ${weapon}으로 공격합니다!!`
+    //     // return `${this.name}이 ${this.weapon}으로 공격합니다!!`
+    //   },
+    //   changeWeapon(newWeapon) {
+    //     this.weapon = newWeapon;
+    //     return `무기가 ${this.weapon}으로 교체되었습니다.`;
+    //   }
+    // }
+
+
+    // 3
+    // 객체 중복생성 해경
+    // function Knight(name, weapon)  {
+    //   this.name= name;
+    //   this.weapon= weapon;
+    // }
+
+    // // 프로토타입에 함수를 등록
+    // // 프로토타입에 등록한다는 것의 의미 -> 모든 인스턴스가 이 프로토타입 공간을 공유하기 때문에 프로토타입을 통해 매서드에에 접근할 수 있게 된다.
+    // Knight.prototype.attack = function () {
+    //   return `${this.name}이 ${this.weapon}으로 공격합니다!!`
+    // }
+    // Knight.prototype.changeWeapon = function (newWeapon) {
+    //   this.weapon = newWeapon;
+    //   return `무기가 ${this.weapon}으로 교체되었습니다.`;
+    // }
+
+
+    class BaseCharactor {
+      constructor(name, weapon) {
+        this.name = name;
+        this.weapon = weapon;
+      }
+      attack() {
+        return `${this.name}이 ${this.weapon}으로 공격합니다!!`
+      }
+      changeWeapon(newWeapon) {
+        this.weapon = newWeapon;
+        return `무기가 ${this.weapon}으로 교체되었습니다.`;
+      }
+    }
+
+    // const knight = new Knight('재현','검');
+
+    class Skeleton extends BaseCharactor {
+      constructor(name, weapon, unitType) {
+        super(name, weapon);  // super의 의미: super를 실행한다는 것은 상속 받는 부모 클래스의 생성자(constructor) 호출(실행)한다고 생각하자
+        this.unitType = unitType
+      }
+    }
+    
+    const sk = new Skeleton('재현','방패','해골');
+
+  </script>
+</body>
+</html>
