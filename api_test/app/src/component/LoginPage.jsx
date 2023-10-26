@@ -13,7 +13,7 @@ export default function LoginPage() {
   const onChangePassword = (e) => {
     setPassword(e.target.value);
   };
-  const login = async () => {
+  const login = async (email, password) => {
     try {
       const url = `${baseUrl}user/login`;
       const option = {
@@ -33,6 +33,9 @@ export default function LoginPage() {
       if (res.data.status === 422) {
         throw new Error(res.data.message);
       }
+      console.log(res.data.user.token);
+
+      localStorage.setItem('token', res.data.user.token);
     } catch (error) {
       console.error(error);
     }
@@ -40,10 +43,12 @@ export default function LoginPage() {
   const submitLogin = (e) => {
     e.preventDefault();
     login(email, password);
+    setInputEmail('');
+    setPassword('');
   };
   return (
     <>
-      <h1>로그인</h1>
+      <h1>로그인ㄴ</h1>
       <section>
         <h2>이메일 비밀번호 입력하는 곳</h2>
         <form onSubmit={submitLogin}>
